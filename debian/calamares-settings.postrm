@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -e
+
+PKG='calamares-settings'
+
+if [ "$1" = remove ] || [ "$1" = deconfigure ]; then
+  dpkg-divert --package $PKG --remove /usr/bin/calamares
+fi
+
+#DEBHELPER#
+
+exit 0

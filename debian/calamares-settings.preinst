@@ -1,0 +1,19 @@
+#! /bin/sh
+
+set -e
+
+PKG='calamares-settings'
+
+divert_rename () {
+    source=$1
+    target=$2
+    if ! dpkg-divert --list $source | grep -q $PKG ; then
+        dpkg-divert --add --package $PKG --rename --divert $target $source
+    fi
+}
+
+divert_rename '/usr/bin/calamares' '/usr/bin/_neon.calamares'
+
+#DEBHELPER#
+
+exit 0
