@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# Copyright 2018 Harald Sitter <sitter@kde.org>
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License as
+# published by the Free Software Foundation; either version 2 of
+# the License or (at your option) version 3 or any later version
+# accepted by the membership of KDE e.V. (or its successor approved
+# by the membership of KDE e.V.), which shall act as a proxy
+# defined in Section 14 of version 3 of the license.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+# calamares currently has subpar l10n capabilites.
+# this helper is ment to aid in getting very primitive language support
+# of the ground by using a helper from ubuntu's language-selector-common
+# to retrieve a list of packages required for the chosen system language
+# and then manually installig it.
+# https://github.com/calamares/calamares/issues/924
+
+set -ex
+
+. /etc/default/locale
+
+echo $LANG
+without_ext=$(echo $LANG | cut -d. -f1)
+
+apt-get update || true
+missing=$(check-language-support --language="$without_ext")
+apt-get install -y $missing || true
