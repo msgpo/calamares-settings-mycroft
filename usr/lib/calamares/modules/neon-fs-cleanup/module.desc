@@ -1,0 +1,5 @@
+---
+type:       "job"
+name:       "neon-fs-cleanup"
+interface:  "python"
+script:     "main.py"
