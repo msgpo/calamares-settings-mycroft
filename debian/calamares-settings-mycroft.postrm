@@ -2,7 +2,7 @@
 
 set -e
 
-PKG='calamares-settings'
+PKG='calamares-settings-mycroft'
 
 if [ "$1" = remove ] || [ "$1" = deconfigure ]; then
   dpkg-divert --remove --package $PKG --rename /usr/bin/calamares

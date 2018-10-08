@@ -1,14 +1,14 @@
-Source: calamares-settings
+Source: calamares-settings-mycroft
 Section: devel
 Priority: optional
 Maintainer: Rohan Garg <rohan@kde.org>
 Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.6
 Homepage: https://github.com/netrunner-core/calamares-core
-Vcs-Git: git://anongit.neon.kde.org/neon/calamares-settings
-Vcs-Browser: https://packaging.neon.kde.org/neon/calamares-settings
+Vcs-Git: git://anongit.neon.kde.org/neon/calamares-settings-mycroft
+Vcs-Browser: https://packaging.neon.kde.org/neon/calamares-settings-mycroft
 
-Package: calamares-settings
+Package: calamares-settings-mycroft
 Architecture: amd64
 Depends: calamares
 Description: distribution-independent installer framework

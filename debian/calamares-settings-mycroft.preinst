@@ -2,7 +2,7 @@
 
 set -e
 
-PKG='calamares-settings'
+PKG='calamares-settings-mycroft'
 
 divert_rename () {
     source=$1
