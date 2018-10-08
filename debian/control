@@ -11,6 +11,9 @@ Vcs-Browser: https://packaging.neon.kde.org/neon/calamares-settings-mycroft
 Package: calamares-settings-mycroft
 Architecture: amd64
 Depends: calamares
+Provides: calamares-settings
+Breaks: calamares-settings
+Replaces: calamares-settings
 Description: distribution-independent installer framework
  distribution-independent installer framework.
  .
